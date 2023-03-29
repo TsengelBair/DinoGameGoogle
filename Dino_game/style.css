@@ -1,0 +1,53 @@
+.game {
+  width: 600px; /*задали шарину и высоту игрового поля*/
+  height: 200px;
+  border-bottom: 1px solid #000; /*внизу игрвого экрана будет граница */
+  margin: auto; /*автоматический отступ расположит по центру*/
+}
+#dino {
+  /*через # обращаемся к id*/
+  width: 50px; /*задали шарину и высоту дино*/
+  height: 50px;
+  background-image: url(img/dino.png); /*установили само изображение дино*/
+  background-size: 50px 50px; /*задали  размер картинки такой же как у  блока выше*/
+  position: relative; /*этой командой мы фиксируем его, чтобы потом сдвигать относительно зафиксированного положения*/
+  top: 150px; /*задали отступ сверху, теперь дино стоит ровно на границе*/
+}
+#cactus {
+  width: 20px;
+  height: 40px;
+  background-image: url(img/cactus.png);
+  background-size: 20px 40px;
+  position: relative; /*без этой команды мы не сможем сдвигать его*/
+  top: 110px;
+  left: 580px;
+  animation: cactusMov 1s infinite linear; /*cactusMove - название; infinite - анимация будет бесконечной; linear - будет ускоренной*/
+}
+@keyframes cactusMov {
+  0% {
+    left: 580px; /*0% - это начальное положение*/
+  }
+  100% {
+    left: -20px; /*его конечная позиция*/
+  }
+}
+.jump {
+  animation: jump 0.4s linear;
+}
+@keyframes jump {
+  0% {
+    top: 150px;
+  }
+  25% {
+    top: 120px;
+  }
+  50% {
+    top: 90px;
+  }
+  75% {
+    top: 120px;
+  }
+  100% {
+    top: 150px;
+  }
+}
